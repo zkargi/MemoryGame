@@ -1,0 +1,42 @@
+.card {
+    height: 120px;
+    width: 90px;
+    position: relative;
+
+    transform-style: preserve-3d; /*  Kartın 3D olarak render edilmesini sağlar. */
+    transition: all 0.2s; /* : Tüm kart animasyonlarına 0.2 saniyelik bir geçiş efekti ekler.*/
+    transform: rotateY(0deg);
+    border-radius: 50%;
+}
+
+.card-front, .card-back {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    height: 100%;
+    width: 100%;/* Ön ve arka yüzlerin kartın tamamını kaplamasını sağlar.*/
+    border-radius: 5%;
+}
+.card-back{
+    background:linear-gradient(to right, rgb(243, 244, 246), rgb(209, 213, 219)); 
+}
+
+.card-front {
+    z-index: 2; /* Ön yüzün, arka yüzün üzerine gelmesini sağlar. */
+
+    font-size: 50px;
+
+    line-height: 100px; 
+    text-align: center;
+
+    transform: rotateY(180deg);/*Ön yüzü başlangıçta görünmez yapar kart başlangıçta yatay düzlemde döndürülmemiş olmalıdır.*/
+    backface-visibility: hidden;/* Ön yüzün arkasını görünmez yapar.*/
+    
+    background-color: conic-gradient(at center top, rgb(17, 24, 39), rgb(243, 244, 246), rgb(17, 24, 39));
+    
+}
+
+.card-flipped {
+    transform: rotateY(180deg);
+}

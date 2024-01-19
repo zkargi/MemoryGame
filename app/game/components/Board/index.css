@@ -1,0 +1,5 @@
+.board {
+    display: grid;
+    grid-template-columns: repeat(6, 75px);/*sutunların sayısı ve genişliği */
+    grid-gap: 35px;
+}
